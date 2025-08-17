@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Ruslan+Display&display=swap" rel="stylesheet">    
+<style>
+    body{
+   font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    padding: 50px;
+}
+h2{
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+span{
+    color: #f87171;
+}
+table{
+    width:  100%;
+    text-align: center;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+td,th{
+    border: 1px solid #ccc;
+    padding: 10px 0;
+}
+input{
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f87171;
+    color: white;
+    font-weight: 600;
+}
+button:hover{
+    background-color: #fca5a5;
+}
+
+    </style>
+</head>
+<body>
+    <div class="main">
+<h2>URL <span>shortner</span></h2>
+    <% if(locals.id) { %>
+      <p>URL generated : <a href=url/<%= locals.id %>>https://localhost:8000/url/<%= locals.id %></a> </p>
+   <% } %>
+    <form action="/url" method="post">
+        <label for="">Enter your original url : </label>
+        <input type="text" name="url" id="" placeholder="https://example.com" >
+        <button type="submit">generate</button>
+    </form>
+
+    <% if(locals.urls){ %>
+        <table>
+            <thead>
+                <tr>
+                    <th>s. No</th>
+                    <th>short Id</th>
+                    <th>redirect</th>
+                    <th>clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% urls.forEach((url,index) => { %>
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= url.shortId %></td>
+                        <td><%= url.redirectUrl %></td>
+                        <td><%= url.visitHistory.length %></td>
+                     
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } %>
+    </div>
+    
+</body>
+</html>

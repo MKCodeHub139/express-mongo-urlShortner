@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Ruslan+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Bungee", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .main{
+        padding: 50px;
+      }
+      form{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 300px;
+      }
+      input,button{
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button{
+        cursor: pointer;
+        background-color: #f87171;
+        color: white;
+        font-weight: 600;
+      }
+        button:hover{
+            background-color: #fca5a5;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+<h2>LogIN</h2>
+    <form action="/user/login" method="post">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email"  placeholder="enter email"/>
+      <br />
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password"  placeholder="enter password"/>
+      <br />
+      <button type="submit">Login</button>
+    </form>
+    </div>
+    
+  </body>
+</html>
