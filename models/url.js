@@ -16,7 +16,12 @@ const urlSchema = new mongoose.Schema({
               type:Number,
             },
         }
-    ]
+    ],
+    createdBy:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    }
+
 },{timestamps:true})
 const Url =mongoose.model('url',urlSchema);
 export default Url;

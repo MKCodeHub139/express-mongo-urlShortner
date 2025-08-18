@@ -62,7 +62,7 @@ button:hover{
     <div class="main">
 <h2>URL <span>shortner</span></h2>
     <% if(locals.id) { %>
-      <p>URL generated : <a href=url/<%= locals.id %>>https://localhost:8000/url/<%= locals.id %></a> </p>
+      <p style="margin-bottom: 30px;">URL generated : <a href=url/<%= locals.id %>>https://localhost:8000/url/<%= locals.id %></a> </p>
    <% } %>
     <form action="/url" method="post">
         <label for="">Enter your original url : </label>
